@@ -11,46 +11,45 @@
     <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.umd.js"></script>
 </head>
 <body>
-    <audio id="yy" controls="false" autoplay="true" loop="loop" style="display: none;">
-        <source src="Music/愿你余生漫长.mp3" type="audio/mpeg" />
-    </audio>
-    <audio id="ty" controls="false" autoplay="true" loop="loop" style="display: none;">
-        <source src="Music/太阳.mp3" type="audio/mpeg" />
-    </audio>
-    <!-- 加载 -->
-    <div class="bj">
-        <div class="bj-imgs">
-            <img onclick="screen()" class="Love" src="img/爱心.png" >
-        </div>
+<audio id="yy" controls="false" autoplay="true" loop="loop" style="display: none;">
+    <source src="Music/愿你余生漫长.mp3" type="audio/mpeg" />
+</audio>
+<audio id="ty" controls="false" autoplay="true" loop="loop" style="display: none;">
+    <source src="Music/太阳.mp3" type="audio/mpeg" />
+</audio>
+<!-- 加载 -->
+<div class="bj">
+    <div class="bj-imgs">
+        <img onclick="screen()" class="Love" src="img/爱心.png" alt="爱心">
     </div>
-    <!-- 加载结束 -->
-    
-    <!-- 内容 -->
-    <div class="centent">
-        <div class="centent-warp">
-            <div class="dc">
-                <div class="centent-top">
-                    <div class="top-warp">
-                        <video style="object-fit: cover;" id="video" class="video" autoplay="" loop="" muted="muted" style="background-image:url(>)">
-                                <source src="img/ship2.mp4" type="video/mp4">
-                        </video>
-                    </div>
+</div>
+<!-- 加载结束 -->
+
+<!-- 内容 -->
+<div class="centent">
+    <div class="centent-warp">
+        <div class="dc">
+            <div class="centent-top">
+                <div class="top-warp">
+                    <video style="object-fit: cover;" id="video" class="video" autoplay="" loop="" muted="muted">
+                        <source src="img/ship2.mp4" type="video/mp4">
+                    </video>
                 </div>
-                <div class="centent-center" id="text"></div>
-                <div onclick="getClass()" class="centent-bottom">点我</div>
             </div>
+            <div class="centent-center" id="text"></div>
+            <div onclick="getClass()" class="centent-bottom">点我</div>
         </div>
     </div>
-    <!-- 内容结束 -->
-    
-    
-    <!-- 烟花 -->
-    <div id="container">
-        <div id="fireworks"><img src="img/fireworks.png" alt=""></div>
-        <div id="firecracker"><img src="img/firecracker.png" alt="" width="8px"></div>
-        <p class="zi">祝吴同学，2025，一顺百顺万事顺，顺风顺水顺好运！</p>
-    </div>
-    <!-- 烟花结束 -->
+</div>
+<!-- 内容结束 -->
+
+<!-- 烟花 -->
+<div id="container">
+    <div id="fireworks"><img src="img/fireworks.png" alt="Fireworks"></div>
+    <div id="firecracker"><img src="img/firecracker.png" alt="Firecracker" width="8px"></div>
+    <p class="zi">祝吴同学，2025，一顺百顺万事顺，顺风顺水顺好运！</p>
+</div>
+<!-- 烟花结束 -->
 </body>
 <script type="text/javascript">
     let yy = document.getElementById("yy");
@@ -61,7 +60,7 @@
     $(function() {
         $(".Love").toggleClass("active");
     })
-    
+
     function screen () {
         $('.bj').delay(100).fadeOut('slow');
         yy.pause();
@@ -75,7 +74,7 @@
         let i = 0,
             timer = 0,
             str = '寒来暑往秋收冬藏，希望我们来日方长。'
-        
+
         function typing() {
             if (i <= str.length) {
                 divTyping.innerHTML = str.slice(0, i++) + '_'
@@ -87,7 +86,7 @@
         }
         typing()
     }
-    
+
     function getClass () {
         $(".centent .centent-top").css({
             opacity:"0",
@@ -130,7 +129,7 @@
         },2000)
         setTimeout(startFireworks, 3500);
     }
-    
+
     function startFireworks() {
         // 确保容器适用于烟花显示
         const container = document.getElementById('container');
@@ -146,8 +145,7 @@
         fireworks.start();
 
         // 设置烟花效果持续时间
-        setTimeout(() => { fireworks.stop(); }, 100000); // 10秒后停止
+        setTimeout(() => { fireworks.stop(); }, 10000); // 10秒后停止
     }
 </script>
 </html>
-
